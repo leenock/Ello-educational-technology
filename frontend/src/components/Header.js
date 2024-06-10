@@ -1,18 +1,35 @@
-import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
+import React, { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Box,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Header = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
     setIsDrawerOpen(open);
   };
 
   return (
     <React.Fragment>
-      <AppBar position="fixed"> {/* changed position="static" to position="fixed" */}
+      <AppBar position="fixed" sx={{ bgcolor: "#335C6E" }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -27,31 +44,48 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Ello
           </Typography>
-          <Button color="inherit" sx={{ display: { xs: 'none', md: 'block' } }}>How It Works</Button>
-          <Button color="inherit" sx={{ display: { xs: 'none', md: 'block' } }}>Parent Resources</Button>
-          <Button color="inherit" sx={{ display: { xs: 'none', md: 'block' } }}>Research</Button>
-          <Button color="inherit" sx={{ display: { xs: 'none', md: 'block' } }}>For Teachers</Button>
+          <Button color="inherit" sx={{ display: { xs: "none", md: "block" } }}>
+            How It Works
+          </Button>
+          <Button color="inherit" sx={{ display: { xs: "none", md: "block" } }}>
+            Parent Resources
+          </Button>
+          <Button color="inherit" sx={{ display: { xs: "none", md: "block" } }}>
+            Research
+          </Button>
+          <Button color="inherit" sx={{ display: { xs: "none", md: "block" } }}>
+            For Teachers
+          </Button>
           <Button color="inherit">My Account</Button>
         </Toolbar>
       </AppBar>
-      <Toolbar /> {/* added Toolbar to prevent content from being hidden under the header */}
+      <Toolbar />
       <Drawer
         anchor="left"
         open={isDrawerOpen}
         onClose={toggleDrawer(false)}
+        PaperProps={{
+          sx: { bgcolor: "#335C6E", color: "white" },
+        }}
       >
-        <div>
+        <Box sx={{ width: 250 }}>
           <IconButton onClick={toggleDrawer(false)}>
-            <CloseIcon />
+            <CloseIcon sx={{ color: "white" }} />
           </IconButton>
-        </div>
-        <List>
-          {['How It Works', 'Parent Resources', 'Research', 'For Teachers', 'My Account'].map((text) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+          <List>
+            {[
+              "How It Works",
+              "Parent Resources",
+              "Research",
+              "For Teachers",
+              "My Account",
+            ].map((text) => (
+              <ListItem button key={text}>
+                <ListItemText primary={text} sx={{ color: "white" }} />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
       </Drawer>
     </React.Fragment>
   );
