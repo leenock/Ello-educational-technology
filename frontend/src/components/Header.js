@@ -36,7 +36,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Ello
+            Meet Ello
           </Typography>
           <Button
             color="inherit"
@@ -55,7 +55,7 @@ const Header = () => {
               textTransform: "Capitalize",
             }}
           >
-            Parent Resources
+            About Us
           </Button>
           <Button
             color="inherit"
@@ -75,7 +75,11 @@ const Header = () => {
           >
             For Teachers
           </Button>
-          <Button color="inherit" sx={{ bgcolor: "#28B8B8" }}>
+          <Button
+            variant="contained"
+            color="success"
+            sx={{ bgcolor: "#335C6E", textTransform: "Capitalize" }}
+          >
             My Account
           </Button>
         </Toolbar>
@@ -99,7 +103,13 @@ const Header = () => {
               "Parent Resources",
               "Research",
               "For Teachers",
-              "My Account",
+              <Button
+                variant="contained"
+                color="success"
+                sx={{ bgcolor: "#335C6E", textTransform: "Capitalize" }}
+              >
+                My Account
+              </Button>,
             ].map((text) => (
               <ListItem button key={text}>
                 <ListItemText primary={text} sx={{ color: "white" }} />
