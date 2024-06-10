@@ -5,7 +5,7 @@ import SearchBar from "./components/SearchBar";
 import useBooks from "./hooks/useBooks";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import CssBaseline from '@mui/material/CssBaseline';
+import CssBaseline from "@mui/material/CssBaseline";
 
 const App = () => {
   const books = useBooks();
@@ -33,31 +33,29 @@ const App = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#ffffff' }}>
-       <CssBaseline />
-    <Container>
-      <Header />
-      <br />
-      <Typography variant="h5" gutterBottom>
-       Search Book
-      </Typography>
-      <SearchBar
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        searchResults={searchResults}
-        handleAdd={handleAdd}
-      />
-      <br />
-      <Typography variant="h5" gutterBottom>
-      Explore Ello reading sets
-      </Typography>
-      <ReadingList books={readingList} onRemove={handleRemove} />
-      < br />
-      < br />
-      
-      
-    </Container>
-    <Footer />
+    <div style={{ backgroundColor: "#ffffff" }}>
+      <CssBaseline />
+      <Container>
+        <Header />
+        <br />
+        <Typography variant="h5" gutterBottom>
+          Search Book
+        </Typography>
+        <SearchBar
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          searchResults={searchResults}
+          handleAdd={handleAdd}
+        />
+        <br />
+        <Typography variant="h5" gutterBottom>
+          Explore Ello reading sets
+        </Typography>
+        <ReadingList books={readingList} onRemove={handleRemove} />
+        <br />
+        <br />
+      </Container>
+      <Footer />
     </div>
   );
 };

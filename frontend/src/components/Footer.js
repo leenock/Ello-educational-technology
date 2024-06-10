@@ -1,3 +1,4 @@
+// Import necessary React and Material-UI components and hooks
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -7,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
+// function comp. to render the copyright information
 function Copyright() {
   return (
     <Typography variant="body2" style={{ color: "white" }} align="center">
@@ -20,7 +22,8 @@ function Copyright() {
   );
 }
 
-function Footer(props) {
+//  main Footer component
+function Footer() {
   return (
     <Box component="footer" sx={{ bgcolor: "teal", py: 6, width: "100%" }}>
       <Container maxWidth="lg">
@@ -45,7 +48,7 @@ function Footer(props) {
                   href="#"
                   style={{ textDecoration: "none" }}
                 >
-                 How it Works
+                  How it Works
                 </Link>
               </li>
             </ul>
@@ -160,7 +163,8 @@ function Footer(props) {
             </Button>
           </Grid>
         </Grid>
-        <hr/>
+        <hr />
+        {/* Copyright component */}
         <Copyright />
       </Container>
     </Box>
