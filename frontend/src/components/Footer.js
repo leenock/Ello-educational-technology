@@ -25,7 +25,7 @@ function Copyright() {
 //  main Footer component
 function Footer() {
   return (
-    <Box component="footer" sx={{ bgcolor: "teal", py: 6, width: "100%" }}>
+    <Box component="footer" sx={{ bgcolor: "teal", py: 6 }}>
       <Container maxWidth="lg">
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={2} style={{ color: "white" }}>

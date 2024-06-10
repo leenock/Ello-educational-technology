@@ -44,19 +44,46 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Ello
           </Typography>
-          <Button color="inherit" sx={{ display: { xs: "none", md: "block" } }}>
+          <Button
+            color="inherit"
+            sx={{
+              display: { xs: "none", md: "block" },
+              textTransform: "Capitalize",
+            }}
+          >
             How It Works
           </Button>
-          <Button color="inherit" sx={{ display: { xs: "none", md: "block" } }}>
+
+          <Button
+            color="inherit"
+            sx={{
+              display: { xs: "none", md: "block" },
+              textTransform: "Capitalize",
+            }}
+          >
             Parent Resources
           </Button>
-          <Button color="inherit" sx={{ display: { xs: "none", md: "block" } }}>
+          <Button
+            color="inherit"
+            sx={{
+              display: { xs: "none", md: "block" },
+              textTransform: "Capitalize",
+            }}
+          >
             Research
           </Button>
-          <Button color="inherit" sx={{ display: { xs: "none", md: "block" } }}>
+          <Button
+            color="inherit"
+            sx={{
+              display: { xs: "none", md: "block" },
+              textTransform: "Capitalize",
+            }}
+          >
             For Teachers
           </Button>
-          <Button color="inherit">My Account</Button>
+          <Button color="inherit" sx={{ bgcolor: "#28B8B8" }}>
+            My Account
+          </Button>
         </Toolbar>
       </AppBar>
       <Toolbar />
