@@ -35,7 +35,7 @@ const App = () => {
   return (
     <div style={{ backgroundColor: "#ffffff" }}>
       <CssBaseline />
-      <Container>
+      <Container style={{ marginBottom: "150px" }}>
         <Header />
         <br />
         <Typography variant="h5" gutterBottom>
@@ -52,8 +52,6 @@ const App = () => {
           Explore Ello reading sets
         </Typography>
         <ReadingList books={readingList} onRemove={handleRemove} />
-        <br />
-        <br />
       </Container>
       <Footer />
     </div>
