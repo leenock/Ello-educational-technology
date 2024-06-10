@@ -41,7 +41,7 @@ const ReadingList = ({ books, onRemove }) => {
               <Button
                 variant="contained"
                 style={{
-                  backgroundColor: "red",
+                  backgroundColor: "#F76434",
                   color: "white",
                   position: "absolute",
                   bottom: 16,
