@@ -3,8 +3,9 @@ import { Container, Typography } from "@mui/material";
 import ReadingList from "./components/ReadingList";
 import SearchBar from "./components/SearchBar";
 import useBooks from "./hooks/useBooks";
-import { Header } from "./components/Header";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import CssBaseline from '@mui/material/CssBaseline';
 
 const App = () => {
   const books = useBooks();
@@ -32,10 +33,13 @@ const App = () => {
   };
 
   return (
+    <div style={{ backgroundColor: '#ffffff' }}>
+       <CssBaseline />
     <Container>
       <Header />
-      <Typography variant="h4" gutterBottom>
-        Book Assignment View
+      <br />
+      <Typography variant="h5" gutterBottom>
+       Search Book
       </Typography>
       <SearchBar
         searchTerm={searchTerm}
@@ -43,12 +47,18 @@ const App = () => {
         searchResults={searchResults}
         handleAdd={handleAdd}
       />
+      <br />
       <Typography variant="h5" gutterBottom>
-        Reading List
+      Explore Ello reading sets
       </Typography>
       <ReadingList books={readingList} onRemove={handleRemove} />
-      <Footer />
+      < br />
+      < br />
+      
+      
     </Container>
+    <Footer />
+    </div>
   );
 };
 
