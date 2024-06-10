@@ -33,7 +33,7 @@ function Footer() {
         width: "100%",
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" style={{ paddingTop: '0px' }}>
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={2} style={{ color: "white" }}>
             <Typography variant="h6" gutterBottom>
