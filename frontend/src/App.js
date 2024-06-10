@@ -38,7 +38,7 @@ const App = () => {
       <Container style={{ marginBottom: "150px" }}>
         <Header />
         <br />
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" gutterBottom style={{fontWeight: 'bold'}}>
           Search Book
         </Typography>
         <SearchBar
@@ -48,7 +48,7 @@ const App = () => {
           handleAdd={handleAdd}
         />
         <br />
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h5" gutterBottom style={{fontWeight: 'bold'}}>
           Explore Ello reading sets
         </Typography>
         <ReadingList books={readingList} onRemove={handleRemove} />
