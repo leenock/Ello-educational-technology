@@ -46,12 +46,12 @@ const SearchBar = ({ searchTerm, setSearchTerm, searchResults, handleAdd }) => {
                   primary={book.title}
                   secondary={`Author: ${book.author}`}
                 />
-                <Button
+                <Button style={{backgroundColor: "#28B8B8"}}
                   variant="contained"
                   color="primary"
                   onClick={() => handleAdd(book)}
                 >
-                  Add
+                  Add book
                 </Button>
               </ListItem>
             ))}
