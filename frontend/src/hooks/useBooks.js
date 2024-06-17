@@ -4,26 +4,40 @@ const useBooks = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: `
-          query {
-            books {
-              title
-              author
-              coverPhotoURL
-              readingLevel
-            }
-          }
-        `,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => setBooks(data.data.books));
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${process.env.ello_APP_BACKEND_URL === 'production' ? '' : 'http://localhost:4000'}/`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            query: `
+              query {
+                books {
+                  title
+                  author
+                  coverPhotoURL
+                  readingLevel
+                }
+              }
+            `,
+          }),
+        });
+        
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+        setBooks(data.data.books);
+      } catch (error) {
+        console.error('Fetch error:', error);
+        // Handle error state or logging as needed
+      }
+    };
+
+    fetchData();
   }, []);
 
   return books;
