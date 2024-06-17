@@ -1,10 +1,18 @@
 import { useState, useEffect } from 'react';
 
+const getApiEndpoint = () => {
+  if (process.env.NODE_ENV === 'development') {
+    return 'http://localhost:4000';
+  } else {
+    return '/api';
+  }
+};
+
 const useBooks = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/', {
+    fetch(getApiEndpoint(), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
