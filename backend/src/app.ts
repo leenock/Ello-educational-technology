@@ -6,9 +6,8 @@ import { resolvers } from './resolvers';
 const server = new ApolloServer({ typeDefs, resolvers });
 
 (async () => {
-  const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 4000; // Parse the port and ensure it's a number
   const { url } = await startStandaloneServer(server, {
-    listen: { port }, // Pass the port as a number
+    listen: { port: 4000 },
   });
   console.log(`🚀  Server ready at: ${url}`);
 })();
