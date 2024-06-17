@@ -6,7 +6,7 @@ const useBooks = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.ello_APP_BACKEND_URL === 'production' ? '' : 'http://localhost:4000'}/`, {
+        const response = await fetch(`${process.env.ello_APP_BACKEND_URL}/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
